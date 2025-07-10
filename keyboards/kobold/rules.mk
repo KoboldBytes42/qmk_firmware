@@ -4,3 +4,4 @@ RGBLIGHT_SPLIT = yes
 ENCODER_ENABLE = no
 VIA_ENABLE = yes
 SPLIT_KEYBOARD = yes
+KEYMAP = samurai

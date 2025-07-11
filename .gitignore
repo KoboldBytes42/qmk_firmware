@@ -37,6 +37,9 @@ quantum/version.h
 *.qmk
 *.uf2
 
+#reference keyboards
+/keyboards/keebio/*
+
 # DD config at wrong location
 /keyboards/**/keymaps/*/info.json
 /keyboards/**/keymaps/*/keyboard.json

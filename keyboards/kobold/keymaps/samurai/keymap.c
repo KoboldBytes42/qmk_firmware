@@ -21,6 +21,7 @@
 #include "oled.c"
 //#include "encoder.c"
 
+/* simple combo mechanism
 const uint16_t PROGMEM combo_ae[] = {KC_A, KC_E, COMBO_END};
 const uint16_t PROGMEM combo_ue[] = {KC_U, KC_E, COMBO_END};
 const uint16_t PROGMEM combo_oe[] = {KC_O, KC_E, COMBO_END};
@@ -29,8 +30,50 @@ combo_t key_combos[] = {
     COMBO(combo_ue, RALT(KC_Y)), // for ü
     COMBO(combo_oe, RALT(KC_P)), // for ü
 };
+*/
 
+//advanced combo mechanism
+enum combo_events {
+  UML_AE,
+  UML_UE,
+  UML_OE,
+};
 
+const uint16_t PROGMEM combo_ae[] = {KC_A, KC_E, COMBO_END};
+const uint16_t PROGMEM combo_ue[] = {KC_U, KC_E, COMBO_END};
+const uint16_t PROGMEM combo_oe[] = {KC_O, KC_E, COMBO_END};
+
+combo_t key_combos[] = {
+  [UML_AE] = COMBO_ACTION(combo_ae),
+  [UML_UE] = COMBO_ACTION(combo_ue),
+  [UML_OE] = COMBO_ACTION(combo_oe),
+};
+/* COMBO_ACTION(x) is same as COMBO(x, KC_NO) */
+
+void process_combo_event(uint16_t combo_index, bool pressed) {
+  switch(combo_index) {
+    case UML_AE:
+      if (pressed) {
+        if (unicode_config.input_mode == UNICODE_MODE_MACOS) {
+          tap_code16(UC(0x00FC));
+        }
+        else {
+          tap_code16(RALT(KC_Q));
+        }
+      }
+      break;
+    case UML_UE:
+      if (pressed) {
+        tap_code16(RALT(KC_Y));
+      }
+      break;
+    case UML_OE:
+      if (pressed) {
+        tap_code16(RALT(KC_P));
+      }
+      break;
+  }
+}
 //Default keymap. This can be changed in Via. Use oled.c and encoder.c to change beavior that Via cannot change.
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {

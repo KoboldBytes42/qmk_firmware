@@ -40,7 +40,7 @@ static void print_status_narrow(void) {
             oled_write_ln_P(PSTR("Qwrt"), false);
             break;
         case 1:
-            oled_write_ln_P(PSTR("Clmk"), false);
+            oled_write_ln_P(PSTR("Mod"), false);
             break;
         default:
             oled_write_P(PSTR("Mod\n"), false);
@@ -51,14 +51,13 @@ static void print_status_narrow(void) {
     oled_write_ln_P(PSTR("LAYER"), false);
     switch (get_highest_layer(layer_state)) {
         case 0:
-        case 1:
             oled_write_P(PSTR("Base\n"), false);
+            break;       
+        case 1:
+            oled_write_P(PSTR("Lower"), false);
             break;
         case 2:
             oled_write_P(PSTR("Raise"), false);
-            break;
-        case 3:
-            oled_write_P(PSTR("Lower"), false);
             break;
         default:
             oled_write_ln_P(PSTR("Undef"), false);
@@ -66,6 +65,19 @@ static void print_status_narrow(void) {
     oled_write_P(PSTR("\n\n"), false);
     led_t led_usb_state = host_keyboard_led_state();
     oled_write_ln_P(PSTR("CPSLK"), led_usb_state.caps_lock);
+
+    oled_write_P(PSTR("\n"), false);
+    switch(unicode_config.input_mode) {
+        case UNICODE_MODE_MACOS:
+            oled_write_ln_P(PSTR("MacOS"), false);
+            break;
+        case UNICODE_MODE_WINCOMPOSE:
+            oled_write_ln_P(PSTR("WinC"), false);
+            break;
+        default:
+            oled_write_ln_P(PSTR("Undef"), false);
+    }
+
 } 
 
 oled_rotation_t oled_init_user(oled_rotation_t rotation) {

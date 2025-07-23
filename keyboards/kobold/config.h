@@ -5,33 +5,26 @@
 
 /* USB Device descriptor parameter */
 #define USE_SERIAL
-#define MASTER_RIGHT
-
-#define UNICODE_KEY_MAC KC_LEFT_ALT
-#define UNICODE_KEY_WINC KC_RIGHT_ALT
-#define UNICODE_SELECTED_MODES UNICODE_MODE_MACOS, UNICODE_MODE_WINCOMPOSE
-#define UNICODE_CYCLE_PERSIST true
-#define UNICODE_TYPE_DELAY 10
-
+#define MASTER_LEFT
 
 //#define SPLIT_TRANSPORT_MIRROR
-//#define ENABLE_RGB_MATRIX_SOLID_REACTIVE
+#define ENABLE_RGB_MATRIX_SOLID_REACTIVE_SIMPLE
 
-/* key matrix size              -> done in .json */
+/* key matrix size */
 // Rows are doubled-up
 //#define MATRIX_ROWS 10
-//#define MATRIX_COLS 6. 
+//#define MATRIX_COLS 6. -> done in .json//
 
-//enable LEDs.                  //done in .json
-//#define RGBLIGHT_LED_COUNT 74
+//enable LEDs
 //#define RGBLIGHT_SPLIT
-//#define WS2812_DI_PIN D3  
+//#define WS2812_DI_PIN D3  //done in .json
+//#define RGBLIGHT_LED_COUNT 74
 //#define RGBLED_SPLIT {37,37}
 
 //OLED support
 #define OLED_DRIVER_ENABLE
 #define OLED_DISPLAY_128X32
-//#define SPLIT_OLED_ENABLE.    kukn//done in .json
+//#define SPLIT_OLED_ENABLE. //done in .json
 
 // wiring of each half
 //#define MATRIX_ROW_PINS { C6, D7, E6, B4, B5 }

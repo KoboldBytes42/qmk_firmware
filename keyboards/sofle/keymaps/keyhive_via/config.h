@@ -25,8 +25,8 @@ for more options.
 #define EE_HANDS
 
 //Add RGB underglow
-#define WS2812_DI_PIN D3
-#define RGBLIGHT_LED_COUNT 74
+#define RGB_DI_PIN D3
+#define RGBLED_NUM 74
 #define RGBLED_SPLIT {37,37}
 #define RGBLIGHT_ANIMATIONS
 #define RGBLIGHT_LIMIT_VAL 192 

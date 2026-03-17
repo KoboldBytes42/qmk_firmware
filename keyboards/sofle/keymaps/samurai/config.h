@@ -22,12 +22,11 @@ see https://docs.qmk.fm/#/feature_split_keyboard?id=setting-handedness
 for more options.
 */
 
-// #define EE_HANDS  // with bootloader argument doesnt work atm
-#define MASTER_RIGHT
+#define EE_HANDS
 
 //Add RGB underglow
 #define RGB_DI_PIN D3
-//#define RGBLED_NUM 74
-//#define RGBLED_SPLIT {37,37}
- #define RGBLIGHT_ANIMATIONS
+#define RGBLED_NUM 74
+#define RGBLED_SPLIT {37,37}
+#define RGBLIGHT_ANIMATIONS
 #define RGBLIGHT_LIMIT_VAL 192 

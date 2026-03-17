@@ -260,7 +260,7 @@ static const unsigned char font[] PROGMEM = {
 };
 */
 
-//Arise logo font
+/*Arise logo font
 static const unsigned char PROGMEM font[] = {
     0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
     0x3E, 0x5B, 0x4F, 0x5B, 0x3E, 0x00,

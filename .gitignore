@@ -131,10 +131,3 @@ compile_commands.json
 via*.json
 /keyboards/**/keymaps/via/*
 /keyboards/**/keymaps/vial/*
-
-
-# all other keyboards than Kobold
-
-keyboards/*
-
-!keyboards/kobold/

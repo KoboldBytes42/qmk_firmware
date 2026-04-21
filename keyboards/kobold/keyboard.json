@@ -1,7 +1,9 @@
 {
     "manufacturer": "Keyhive",
     "keyboard_name": "KoboldSofle",
-    "development_board": "promicro",
+    "board": "GENERIC_PROMICRO_RP2040",
+    "processor": "RP2040",
+    "bootloader": "rp2040",
     "maintainer": "None",
   
     "encoder": {
@@ -16,14 +18,15 @@
     },
 
     "matrix_pins": {
-        "cols": [ "B6", "B2", "B3", "B1", "F7", "F6" ],
-        "rows": [ "C6", "D7", "E6", "B4", "B5"]
+        "cols": [ "GP21", "GP23", "GP20", "GP22", "GP26", "GP27" ],
+        "rows": [ "GP5", "GP6", "GP7", "GP8", "GP9"]
                 },
 
     "split": {
         "enabled": true,
         "serial": {
-            "pin": "D2"
+            "driver": "vendor",
+            "pin": "GP1"
         },
         "transport": {
             "protocol": "serial",
@@ -35,8 +38,8 @@
         },
         "matrix_pins": {
             "right":{
-                "cols": [ "F6", "F7", "B1", "B3", "B2", "B6" ],
-                "rows": [ "C6", "D7", "E6", "B4", "B5"]
+                "cols": [ "GP27", "GP26", "GP22", "GP20", "GP23", "GP21" ],
+                "rows": [ "GP5", "GP6", "GP7", "GP8", "GP9"]
             }
         }
         
@@ -48,7 +51,10 @@
         "vid": "0xFC32"
     },
 
-    "ws2812": {"pin":"D3"},
+    "ws2812": {
+        "pin":"GP10",
+        "driver": "vendor"
+    },
     
     "rgb_matrix": {
         "driver": "ws2812",

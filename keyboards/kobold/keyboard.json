@@ -12,6 +12,18 @@
     
     "diode_direction": "COL2ROW",
 
+    "oled": {
+        "enabled": true,
+        "driver": "vendor",
+        "display": "ssd1322",
+        "width": 128,
+        "height": 32,
+        "i2c": {
+            "scl": "GP3",
+            "sda": "GP2"
+        }
+    },
+
     "matrix": {
         "rows": 10,
         "cols": 6
@@ -52,17 +64,27 @@
     },
 
     "ws2812": {
-        "pin":"GP10",
+        "pin":"GP0",
         "driver": "vendor"
     },
     
     "rgb_matrix": {
         "driver": "ws2812",
+        "hue_steps": 4,
+        "max_brightness": 120,
+        "led_flush_limit": 32,
+        "sleep": true,        
+        "split_count": [37, 37],
 
         "animations": {
             "breathing":true,
             "solid_splash":true,
-            "typing_heatmap":true
+            "typing_heatmap":true,
+            "gradient_up_down":true,
+            "solid_reactive_multiwide":true,
+            "alpha_mods":true,
+            "reactive_multinexus":true
+
         },
         "default": {
             "animation": "solid_splash",
@@ -73,11 +95,6 @@
             "speed": 180
         },
 
-        "hue_steps": 7,
-        "max_brightness": 120,
-        "led_flush_limit": 32,
-        "sleep": true,        
-        "split_count": [37, 37],
         "layout": [
             {"x": 64, "y": 40, "flags": 8},
             {"x": 16, "y": 20, "flags": 2},

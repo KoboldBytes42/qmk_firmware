@@ -1,10 +1,12 @@
 {
     "manufacturer": "splitkb.com",
     "maintainer": "splitkb",
+    "board": "GENERIC_PROMICRO_RP2040",
+    "processor": "RP2040",
+    "bootloader": "rp2040",
     "build": {
         "lto": true
     },
-    "development_board": "elite_c",
     "split": {
         "enabled": true
     },

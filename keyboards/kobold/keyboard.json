@@ -53,6 +53,7 @@
         "transport": {
             "protocol": "serial",
             "sync": {
+                "activity": true,
                 "matrix_state": true,
                 "oled": true,
                 "wpm": true
@@ -91,8 +92,9 @@
             "typing_heatmap":true,
             "gradient_up_down":true,
             "solid_reactive_multiwide":true,
-            "alpha_mods":true,
-            "reactive_multinexus":true
+            "digital_rain":true,
+            "solid_reactive_multinexus":true,
+            "riverflow":true
 
         },
         "default": {
@@ -177,14 +179,8 @@
             {"matrix": [9, 5], "x": 202, "y": 64, "flags": 4}
         ],
     },
-    "rgblight": {
-        "led_count": 70,
-        "max_brightness": 128,
-        "split": true,
-        "split_count": [35, 35]
-    },
 
-        "layouts": {
+    "layouts": {
         "LAYOUT": {
             "layout": [
                 {"label": "L06", "matrix": [0, 5], "x": 0, "y": 0.5},

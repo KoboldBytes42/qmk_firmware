@@ -38,7 +38,7 @@
 
     "matrix_pins": {
         "cols": [ "GP4", "GP5", "GP6", "GP7", "GP8", "GP9" ],
-        "rows": [ "GP28", "GP22", "GP26", "GP27", "GP20"]
+        "rows": [ "GP28", "GP22", "GP14", "GP27", "GP20"]
     },
 
     "split": {

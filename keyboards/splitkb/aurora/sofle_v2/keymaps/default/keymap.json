@@ -40,7 +40,7 @@
             "rgblight": false
         },
         "encoder": {
-            "enabled": false
+            "enabled": true
         },
         "rgblight": {
             "hue_steps": 8,

@@ -19,7 +19,7 @@
 
 #include "oled_driver.h"
 
-#ifdef OLED_DRIVER_ENABLE
+#ifdef OLED_ENABLE
 
 static void render_logo(void) {
     static const char PROGMEM raw_logo[] = {

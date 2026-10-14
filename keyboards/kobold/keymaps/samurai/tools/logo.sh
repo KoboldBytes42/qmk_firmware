@@ -4,6 +4,7 @@
 #   tools/logo.sh convert [args...]   run convert_logo.py   (image -> 1-bit frame / C array / PNG)
 #   tools/logo.sh glitch  [args...]   run glitch_gen.py     (1-bit frame -> glitch frames)
 #   tools/logo.sh simulate [args...]  run the firmware state machine and render a GIF
+#   tools/logo.sh build [--no-sim]    rebuild the oled.c logo arrays from tools/logo_params.json
 #   tools/logo.sh setup               create the venv and install Pillow
 #
 # The venv lives at ~/venvs/qmk unless LOGO_VENV is set. It is created and
@@ -33,7 +34,7 @@ ensure_venv() {
 }
 
 usage() {
-    sed -n '2,9p' "$0" | sed 's/^# \{0,1\}//'
+    sed -n '2,10p' "$0" | sed 's/^# \{0,1\}//'
 }
 
 cmd="${1:-}"
@@ -51,6 +52,10 @@ case "$cmd" in
     simulate)
         ensure_venv
         exec "$PY" "$HERE/simulate_firmware.py" "$@"
+        ;;
+    build)
+        ensure_venv
+        exec "$PY" "$HERE/build_logo.py" "$@"
         ;;
     setup)
         ensure_venv

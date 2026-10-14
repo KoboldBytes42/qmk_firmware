@@ -1,0 +1,41 @@
+{
+  "source": "source/TTC_logo_new.png",
+  "convert": {
+    "fit": "stretch",
+    "resample": "box",
+    "threshold": 128,
+    "dither": false,
+    "crop": false,
+    "invert": false,
+    "png": "source/TTC_logo_new_1bit.png",
+    "header": "result/TTC_logo_new_clean.h",
+    "name": "logo_clean"
+  },
+  "glitch": {
+    "style": "line",
+    "direction": "mixed",
+    "flash": false,
+    "severity": 0.5,
+    "pool_size": 24,
+    "seed": 4
+  },
+  "dirty": {
+    "count": 8,
+    "seed": 5
+  },
+  "oled_c": "oled.c",
+  "arrays": {
+    "clean": "logo_clean",
+    "glitch": "logo_glitch",
+    "glitch_dirty": "logo_glitch_dirty"
+  },
+  "simulate": {
+    "sim_seed": 1,
+    "sim_seconds": 25,
+    "tick_ms": 50,
+    "scale": 4,
+    "gif": "preview/ttc_logo_new_sim.gif"
+  },
+  "backup_dir": "result",
+  "frames_h": "logo_frames.h"
+}

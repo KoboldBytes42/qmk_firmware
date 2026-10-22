@@ -1,5 +1,5 @@
 {
-  "source": "source/Fantasy_logo.bmp",
+  "source": "source/Graphic.bmp",
   "convert": {
     "fit": "stretch",
     "resample": "box",
@@ -7,8 +7,8 @@
     "dither": false,
     "crop": false,
     "invert": false,
-    "png": "source/Fantasy_logo_1bit.png",
-    "header": "result/Fantasy_logo_clean.h",
+    "png": "source/Graphic_1bit.png",
+    "header": "result/Graphic_clean.h",
     "name": "logo_clean"
   },
   "glitch": {
@@ -34,7 +34,7 @@
     "sim_seconds": 25,
     "tick_ms": 50,
     "scale": 4,
-    "gif": "preview/fantasy_logo_sim.gif"
+    "gif": "preview/graphic_sim.gif"
   },
   "backup_dir": "result",
   "frames_h": "logo_frames.h"

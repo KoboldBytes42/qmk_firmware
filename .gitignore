@@ -1,3 +1,6 @@
+#my own files
+keyboards/kobold/keymaps/samurai/preview/*
+
 # Junk files
 *.bak
 *.swp
